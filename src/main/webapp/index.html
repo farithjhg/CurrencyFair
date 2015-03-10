@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en" ng-app="myApp">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Currency Fair Challenge</title>
+    <link rel="stylesheet" href="css/app.css"/>
+    <link rel="stylesheet" href="css/bootstrap/bootstrap-responsive.min.css"/>
+    <link rel="stylesheet" href="css/bootstrap/bootstrap.min.css"/>
+	<!-- JQuery ================================================================ -->
+	<script src="js/jquery/jquery-2.0.3.js"></script>
+	
+	<!-- Bootstrap ============================================================= -->
+	<script src="js/bootstrap/bootstrap.js"></script>
+	
+	<!-- AngularJS ============================================================= -->
+	<script src="lib/angular/angular.js"></script>
+	<script src="lib/angular/angular-route.js"></script>
+	<script src="lib/angular/angular-resource.js"></script>
+	
+	<!-- AngularJS App Code ==================================================== -->
+	<script src="js/app.js"></script>
+	<script src="js/services.js"></script>
+	<script src="js/controller.js"></script>
+</head>
+<body>
+
+<ul class="menu">
+    <li><a href="#/list">Currency Fear</a></li>
+    <li><a href="#/graphs">Graphs</a></li>
+</ul>
+
+<div ng-view></div>
+
+</body>
+</html>

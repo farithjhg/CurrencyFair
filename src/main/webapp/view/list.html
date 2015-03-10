@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Regions</title>
+</head>
+<body>
+<div class="form-horizontal">
+ <label for="filter">Filter By:</label>
+ <input type="text" size="400px;" id="filter" ng-model="filter.userId" placeholder="Id or Name">
+</div>
+<div>
+	<div style="float: left;">
+		<h3>Currencies Fare</h3>
+	</div>
+	<div style="float: right;">
+		<a ng-click="createNewRegion()" class="btn btn-primary">Add New Region</a>
+	</div>
+</div>
+<table class="table table-striped">
+  <tr style="font-weight:bold;">
+    <td>User Id</td>
+    <td>From</td>
+    <td>To</td>
+    <td>Amount Sold</td>
+    <td>Amount Buyed</td>
+    <td>Rate</td>
+    <td>Time Placed</td>
+    <td>Originating Country</td>
+    <td></td>
+  </tr>
+  <tr ng-repeat="currency in listCurrency | filter:filter.userId | orderBy:userId">
+    <td>{{currency.userId}}</td>
+    <td>{{currency.currencyFrom}}</td>
+    <td>{{currency.currencyTo}}</td>
+    <td>{{currency.amountSell}}</td>
+    <td>{{currency.amountBuy}}</td>
+    <td>{{currency.rate}}</td>
+    <td>{{currency.timePlaced | date : format : short}}</td>
+    <td>{{currency.originatingCountry}}</td>
+    <td>
+      <a ng-click="editRegion(region.regionId)" class="btn btn-small btn-primary">Edit</a>
+      <a ng-click="deleteRegion(region.regionId)" class="btn btn-small btn-danger">Delete</a>
+    </td>
+  </tr>
+</table>
+</body>
+</html>
