@@ -16,21 +16,13 @@ myApp.config(function($routeProvider) {
         	      }
         	}
 	    })
-	    .when('/newRegion', {
-	        controller: 'RegionCreateController',
-	        templateUrl: 'view/newRegion.html'
+	    .when('/graphs', {
+	        controller: 'GraphController',
+	        templateUrl: 'view/graphs.html'
 	    })
-	    .when('/region-detail/:id', {
-	        controller: 'RegionEditController',
-	        templateUrl: 'view/region-detail.html'
+	    .when('/newCurrencyFare', {
+	        controller: 'CurrencyFareCreateController',
+	        templateUrl: 'view/newCurrencyFare.html'
 	    })	    
-        .when('/view1', {
-            controller: 'dummyController',
-            templateUrl: 'Partials/view1.html'
-        })
-        .when('/view2', {
-            controller: 'dummyController',
-            templateUrl: 'Partials/view2.html'
-        })
         .otherwise({redirectTo: '/list'});
 });

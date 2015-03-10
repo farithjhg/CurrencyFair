@@ -1,0 +1,25 @@
+<div class="container">
+    <h1>Create a new Currency Fare</h1>
+
+    <form novalidate="novalidate" class="form-horizontal">
+        <div class="control-group">
+            <label class="control-label" for="regionId">Id:</label>
+            <div class="controls">
+                <input type="text" id="regionId" ng-model="currencyFare.currencyFareId" placeholder="Id"/>
+            </div>
+        </div>
+        <div class="control-group">
+            <label class="control-label" for="regionName">User Id:</label>
+
+            <div class="controls">
+                <input type="text" id="regionName" ng-model="currencyFare.userId" placeholder="User Id"/>
+            </div>
+        </div>
+        <div class="control-group">
+            <div class="controls">
+                <a ng-click="saveNewCurrencyFare()" class="btn btn-small btn-primary">Save</a>
+                <a href="#/list" class="btn btn-small btn-primary">Cancel</a>
+            </div>
+        </div>
+    </form>
+</div>

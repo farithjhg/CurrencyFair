@@ -1,0 +1,37 @@
+<div class="container">
+    <h1>Graphs</h1>
+    <h2>Trade break up by Currency From</h2>
+	<table class="table table-striped">
+	  <tr style="font-weight:bold;">
+	    <td>Currency From</td>
+	    <td>Count</td>
+	  </tr>
+	  <tr ng-repeat="currency in listCurrencyFrom">
+	    <td>{{currency.currencyCode}}</td>
+	    <td>{{currency.count}}</td>
+	  </tr>
+	</table>
+    <h2>Trade break up by Currency To</h2>
+	<table class="table table-striped">
+	  <tr style="font-weight:bold;">
+	    <td>Currency To</td>
+	    <td>Count</td>
+	  </tr>
+	  <tr ng-repeat="currency in listCurrencyTo">
+	    <td>{{currency.currencyCode}}</td>
+	    <td>{{currency.count}}</td>
+	  </tr>
+	</table>
+    <h2>Trade break up by Country Origin</h2>
+	<table class="table table-striped">
+	  <tr style="font-weight:bold;">
+	    <td>Country</td>
+	    <td>Count</td>
+	  </tr>
+	  <tr ng-repeat="currency in listCountries">
+	    <td>{{currency.countryCode}}</td>
+	    <td>{{currency.count}}</td>
+	  </tr>
+	</table>
+
+</div>
