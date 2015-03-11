@@ -41,6 +41,7 @@ public class CurrencyFareServiceImpl implements CurrencyFareService {
 
     public CurrencyFare save(CurrencyFare entity) {
 		if(entity.getCurrencyFareId()==null){
+			//Get the new Id
 			entity.setCurrencyFareId(currencyFareRepository.getMaxId());
 			currencyFareRepository.save(entity);
 		}else{
