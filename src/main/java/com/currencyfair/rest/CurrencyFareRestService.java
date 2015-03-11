@@ -34,6 +34,13 @@ public class CurrencyFareRestService {
     }
 
     @GET
+    @Path("getNewId")
+    @Produces(MediaType.APPLICATION_JSON)
+    public int getNewId() {
+        return currencyFareService.getMaxId();
+    }
+    
+    @GET
     @Path("getCurrencyFromGroupByCode")
     @Produces(MediaType.APPLICATION_JSON)
     public List<Currency> getCurrencyFromGroupByCode() {
@@ -65,8 +72,8 @@ public class CurrencyFareRestService {
     @POST
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)
-    public CurrencyFare save(CurrencyFare CurrencyFare) {
-        return currencyFareService.save(CurrencyFare);
+    public CurrencyFare save(CurrencyFare currencyFare) {
+        return currencyFareService.save(currencyFare);
     }
 
     @PUT

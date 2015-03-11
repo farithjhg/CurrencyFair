@@ -84,4 +84,14 @@ public class CurrencyFareRepositoryCustomImpl implements  CurrencyFareRepository
 		}
 		return listCountry;
 	}
+
+	/**
+	 * Return the New Id
+	 */
+	public Integer getMaxId() {
+		String txtQuery = "select Max(o.currencyFareId) + 1 from CurrencyFare o ";
+		Integer result = (Integer) em.createQuery(txtQuery).getSingleResult();
+
+		return result;
+	}
 }

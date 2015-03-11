@@ -39,8 +39,7 @@
     <td>{{currency.timePlaced | date : format : short}}</td>
     <td>{{currency.originatingCountry}}</td>
     <td>
-      <a ng-click="editRegion(region.regionId)" class="btn btn-small btn-primary">Edit</a>
-      <a ng-click="deleteRegion(region.regionId)" class="btn btn-small btn-danger">Delete</a>
+      <a ng-click="deleteRow(currency.currencyFareId)" class="btn btn-small btn-danger">Delete</a>
     </td>
   </tr>
 </table>

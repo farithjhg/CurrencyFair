@@ -34,6 +34,13 @@ services.factory('CountryFactory', function ($resource) {
     })
 });
 
+services.factory('NewRowFactory', function ($resource) {
+    return $resource('/CurrencyFair/rest/services/getNewId', {}, {
+    	getNewId: { method: 'GET' }
+    })
+});
+
+
 services.factory('EntityFactory', function ($resource) {
     return $resource('/CurrencyFair/rest/services/:id', {}, {
         show: { method: 'GET' },

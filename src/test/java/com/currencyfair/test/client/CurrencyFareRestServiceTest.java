@@ -123,6 +123,17 @@ public class CurrencyFareRestServiceTest {
     }
 
     @Test
+    public void testGetNewIdShouldReturn20() throws IOException {
+        ClientResponse resp = webService.path("rest").path("services").path("getNewId")
+                .accept(MediaType.APPLICATION_JSON)
+                .get(ClientResponse.class);
+        System.out.println("Got response: " + resp);
+        String actual = resp.getEntity(String.class);
+        System.out.println("Id: " + actual);
+        assertTrue(actual.equals("20"));
+    }
+    
+    @Test
     public void testGetCurrencyGroupByCountryShouldReturnJSArray() throws IOException {
         ClientResponse resp = webService.path("rest").path("services").path("getCurrencyGroupByCountry")
                 .accept(MediaType.APPLICATION_JSON)

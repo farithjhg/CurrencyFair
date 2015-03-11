@@ -41,6 +41,7 @@ public class CurrencyFareServiceImpl implements CurrencyFareService {
 
     public CurrencyFare save(CurrencyFare entity) {
 		if(entity.getCurrencyFareId()==null){
+			entity.setCurrencyFareId(currencyFareRepository.getMaxId());
 			currencyFareRepository.save(entity);
 		}else{
 			em.merge(entity);
@@ -62,6 +63,10 @@ public class CurrencyFareServiceImpl implements CurrencyFareService {
 
 	public List<Country> getCountryGroupByCode() {
 		return currencyFareRepository.getCountryGroupByCode();
+	}
+
+	public Integer getMaxId() {
+		return currencyFareRepository.getMaxId();
 	}
 
 }

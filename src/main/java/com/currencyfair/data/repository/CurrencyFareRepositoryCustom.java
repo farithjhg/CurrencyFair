@@ -26,4 +26,10 @@ public interface CurrencyFareRepositoryCustom  {
      * @return List<Country>
      */
 	public List<Country> getCountryGroupByCode();
+	
+	/**
+	 * Get the new Id 
+	 * @return Integer
+	 */
+	public Integer getMaxId();
 }

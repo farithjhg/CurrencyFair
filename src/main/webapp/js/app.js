@@ -11,14 +11,22 @@ myApp.config(function($routeProvider) {
         	      // I will cause a 1 second delay
         	      delay: function($q, $timeout) {
         	        var delay = $q.defer();
-        	        $timeout(delay.resolve, 500);
+        	        $timeout(delay.resolve, 1500);
         	        return delay.promise;
         	      }
         	}
 	    })
 	    .when('/graphs', {
 	        controller: 'GraphController',
-	        templateUrl: 'view/graphs.html'
+	        templateUrl: 'view/graphs.html',
+	        resolve: {
+      	      // I will cause a 1 second delay
+      	      delay: function($q, $timeout) {
+      	        var delay = $q.defer();
+      	        $timeout(delay.resolve, 1500);
+      	        return delay.promise;
+      	      }
+      	}
 	    })
 	    .when('/newCurrencyFare', {
 	        controller: 'CurrencyFareCreateController',

@@ -1,23 +1,67 @@
 <div class="container">
     <h1>Create a new Currency Fare</h1>
 
-    <form novalidate="novalidate" class="form-horizontal">
+    <form name="newCurrencyFare" class="form-horizontal">
         <div class="control-group">
-            <label class="control-label" for="regionId">Id:</label>
-            <div class="controls">
-                <input type="text" id="regionId" ng-model="currencyFare.currencyFareId" placeholder="Id"/>
-            </div>
-        </div>
-        <div class="control-group">
-            <label class="control-label" for="regionName">User Id:</label>
+            <label class="control-label" for="fieldUserId">User Id</label>
 
             <div class="controls">
-                <input type="text" id="regionName" ng-model="currencyFare.userId" placeholder="User Id"/>
+                <input type="text" id="fieldUserId" ng-model="currencyFare.userId" placeholder="123464" required/>
             </div>
         </div>
         <div class="control-group">
+            <label class="control-label" for="fieldCf">From</label>
+
             <div class="controls">
-                <a ng-click="saveNewCurrencyFare()" class="btn btn-small btn-primary">Save</a>
+                <input type="text" id="fieldCf" ng-model="currencyFare.currencyFrom" placeholder="EUR" required/>
+            </div>
+        </div>
+        <div class="control-group">
+            <label class="control-label" for="fieldCt">To</label>
+
+            <div class="controls">
+                <input type="text" id="fieldCt" ng-model="currencyFare.currencyTo" placeholder="GBP" required/>
+            </div>
+        </div>
+        <div class="control-group">
+            <label class="control-label" for="fieldAs">Amount Sell</label>
+
+            <div class="controls">
+                <input type="number" id="fieldAs" ng-model="currencyFare.amountSell" placeholder="1000" required/>
+            </div>
+        </div>
+        <div class="control-group">
+            <label class="control-label" for="fieldAs">Amount Buy</label>
+
+            <div class="controls">
+                <input type="number" id="fieldAs" formnovalidate ng-model="currencyFare.amountBuy" placeholder="713.7" required>
+            </div>
+        </div>
+        <div class="control-group">
+            <label class="control-label" for="fieldRate">Rate</label>
+
+            <div class="controls">
+                <input type="number" id="fieldRate" formnovalidate ng-model="currencyFare.rate" placeholder="0.714" required/>
+            </div>
+        </div>
+        <div class="control-group">
+            <label class="control-label" for="fieldTp">Time Placed</label>
+
+            <div class="controls">
+                <input type="Date" id="fieldTp" ng-model="currencyFare.timePlaced" placeholder="Mar 10, 2015" required/>
+            </div>
+        </div>
+        <div class="control-group">
+            <label class="control-label" for="fieldOc">Originating Country</label>
+
+            <div class="controls">
+                <input type="text" id="fieldOc" ng-model="currencyFare.originatingCountry" placeholder="FR" required/>
+            </div>
+        </div>
+        
+        <div class="control-group">
+            <div class="controls">
+            	<button ng-click="saveNewCurrencyFare(newCurrencyFare)" class="btn btn-small btn-primary">Save</button>
                 <a href="#/list" class="btn btn-small btn-primary">Cancel</a>
             </div>
         </div>
