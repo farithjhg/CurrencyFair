@@ -29,7 +29,7 @@ services.factory('CurrencyToFactory', function ($resource) {
 });
 
 services.factory('CountryFactory', function ($resource) {
-    return $resource('/CurrencyFair/rest/services/getCurrencyGroupByCountry', {}, {
+    return $resource('/CurrencyFair/rest/services/getCountryGroupByCode', {}, {
     	getCountries: { method: 'GET', isArray: true }
     })
 });

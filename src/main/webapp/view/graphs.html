@@ -1,16 +1,29 @@
 <div class="container">
     <h1>Graphs</h1>
-    <h2>Trade break up by Currency From</h2>
-	<table class="table table-striped">
-	  <tr style="font-weight:bold;">
-	    <td>Currency From</td>
-	    <td>Count</td>
-	  </tr>
-	  <tr ng-repeat="currency in listCurrencyFrom">
-	    <td>{{currency.currencyCode}}</td>
-	    <td>{{currency.count}}</td>
-	  </tr>
-	</table>
+    <div>
+	    <h2>Trade break up by Currency From</h2>
+		<table class="table table-striped">
+		  <tr style="font-weight:bold;">
+		    <td>Currency From</td>
+		    <td>Count</td>
+		  </tr>
+		  <tr ng-repeat="currency in listCurrencyFrom">
+		    <td>{{currency.currencyCode}}</td>
+		    <td>{{currency.count}}</td>
+		  </tr>
+		</table>
+		<nvd3-pie-chart
+            data="listCurrencyFrom"
+            id="listCurrencyFrom"
+            showLabels="true"
+            x="xFunction()"
+            y="yFunction()"
+            donut="true"
+            donutRatio=".5"
+            donutLabelsOutside="true">
+        	<svg height="300"></svg>
+    	</nvd3-pie-chart>
+	</div>
     <h2>Trade break up by Currency To</h2>
 	<table class="table table-striped">
 	  <tr style="font-weight:bold;">
