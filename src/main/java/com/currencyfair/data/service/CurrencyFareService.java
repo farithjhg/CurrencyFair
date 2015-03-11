@@ -2,6 +2,7 @@ package com.currencyfair.data.service;
 
 import java.util.List;
 
+import com.currencyfair.data.entity.Country;
 import com.currencyfair.data.entity.Currency;
 import com.currencyfair.data.entity.CurrencyFare;
 
@@ -33,7 +34,19 @@ public interface CurrencyFareService {
     */
     public void delete(CurrencyFare entity);
 
+    /**
+     * Get a List of Currency group by Currency From
+     * @return List<Currency>
+     */
     public List<Currency> getCurrencyFromGroupByCode();
+    /**
+     * Get a List of Currency group by Currency To
+     * @return List<Currency>
+     */
 	public List<Currency> getCurrencyToGroupByCode();
-	public List<Currency> getCurrencyGroupByCountry();
+    /**
+     * Get a List of Country group by Country Code
+     * @return List<Country>
+     */
+	public List<Country> getCountryGroupByCode();
 }

@@ -12,6 +12,7 @@ import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 
+import com.currencyfair.data.entity.Country;
 import com.currencyfair.data.entity.Currency;
 import com.currencyfair.data.entity.CurrencyFare;
 import com.currencyfair.data.factory.ServicesFactory;
@@ -47,10 +48,10 @@ public class CurrencyFareRestService {
     }
 
     @GET
-    @Path("getCurrencyGroupByCountry")
+    @Path("getCountryGroupByCode")
     @Produces(MediaType.APPLICATION_JSON)
-    public List<Currency> getCurrencyGroupByCountry() {
-        return currencyFareService.getCurrencyGroupByCountry();
+    public List<Country> getCountryGroupByCode() {
+        return currencyFareService.getCountryGroupByCode();
     }
     
     

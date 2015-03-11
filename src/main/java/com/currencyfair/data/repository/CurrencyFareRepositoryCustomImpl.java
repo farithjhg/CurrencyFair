@@ -7,6 +7,7 @@ import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 
+import com.currencyfair.data.entity.Country;
 import com.currencyfair.data.entity.Currency;
 
 
@@ -65,10 +66,10 @@ public class CurrencyFareRepositoryCustomImpl implements  CurrencyFareRepository
 	}
 	
 	/**
-	 * Return a list of Currency : country, count
+	 * Return a list of Country : countryCode, count
 	 */
-	public List<Currency> getCurrencyGroupByCountry(){
-		List<Currency> listCurrency = new ArrayList<Currency>();
+	public List<Country> getCountryGroupByCode(){
+		List<Country> listCountry = new ArrayList<Country>();
 		String txtQuery = "select o.originatingCountry, count(o) from CurrencyFare o "+
 						  "group by o.originatingCountry order by o.originatingCountry";
 		Iterator results = em.createQuery(txtQuery)
@@ -78,12 +79,11 @@ public class CurrencyFareRepositoryCustomImpl implements  CurrencyFareRepository
 		while ( results.hasNext() ) {
 			Object[] row = (Object[])results.next();
 			
-			String currencyCode = null;
 			String countryCode = row[0].toString();
 			int count = Integer.parseInt(row[1].toString());
 			
-			listCurrency.add(new Currency(currencyCode, countryCode, count));
+			listCountry.add(new Country(countryCode, count));
 		}
-		return listCurrency;
+		return listCountry;
 	}
 }

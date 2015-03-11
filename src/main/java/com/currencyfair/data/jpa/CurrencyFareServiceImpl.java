@@ -10,6 +10,7 @@ import org.springframework.stereotype.Repository;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import com.currencyfair.data.entity.Country;
 import com.currencyfair.data.entity.Currency;
 import com.currencyfair.data.entity.CurrencyFare;
 import com.currencyfair.data.repository.CurrencyFareRepository;
@@ -59,8 +60,8 @@ public class CurrencyFareServiceImpl implements CurrencyFareService {
 		return currencyFareRepository.getCurrencyToGroupByCode();
 	}
 
-	public List<Currency> getCurrencyGroupByCountry() {
-		return currencyFareRepository.getCurrencyGroupByCountry();
+	public List<Country> getCountryGroupByCode() {
+		return currencyFareRepository.getCountryGroupByCode();
 	}
 
 }
