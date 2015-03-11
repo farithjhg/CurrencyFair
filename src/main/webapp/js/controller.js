@@ -19,6 +19,7 @@ myApp.controller('ListController', ['$scope','$location','EntityFactory', 'ListF
     };
         
 	$scope.listCurrency = ListFactory.query();
+	$scope.$apply();
 }]);
 
 myApp.controller('GraphController', ['$scope','$location','CurrencyFromFactory', 'CurrencyToFactory', 'CountryFactory','popupService','$window',
@@ -46,6 +47,7 @@ myApp.controller('GraphController', ['$scope','$location','CurrencyFromFactory',
   	        return d.count;
   	    };
   	}
+  	$scope.$apply();
 }]);
 
 
