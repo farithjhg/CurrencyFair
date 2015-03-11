@@ -34,10 +34,9 @@ public class CurrencyFareRepositoryCustomImpl implements  CurrencyFareRepository
 			Object[] row = (Object[])results.next();
 			
 			String currencyCode = row[0].toString();
-			String countryCode = null;
 			int count = Integer.parseInt(row[1].toString());
 			
-			listCurrency.add(new Currency(currencyCode, countryCode, count));
+			listCurrency.add(new Currency(currencyCode, count));
 		}
 		return listCurrency;
 	}
@@ -57,10 +56,9 @@ public class CurrencyFareRepositoryCustomImpl implements  CurrencyFareRepository
 			Object[] row = (Object[])results.next();
 			
 			String currencyCode = row[0].toString();
-			String countryCode = null;
 			int count = Integer.parseInt(row[1].toString());
 			
-			listCurrency.add(new Currency(currencyCode, countryCode, count));
+			listCurrency.add(new Currency(currencyCode, count));
 		}
 		return listCurrency;
 	}
