@@ -10,3 +10,5 @@ Tested in Tomcat 8.0
 To run you should import as Maven Project in eclipse then you have to execute the testing part in order to generate data.
 
 URL: http://localhost:8080/CurrencyFair/
+
+Number of hour to develop this APP: 12 hours
